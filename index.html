@@ -416,12 +416,14 @@
             padding: 50px;
             border-radius: 12px;
             border: 1px solid var(--border-color);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.4);
         }
 
         .portal-content h2, .portal-content h3 {
             color: #fff;
             margin-top: 35px;
             margin-bottom: 15px;
+            letter-spacing: 1px;
         }
 
         .portal-content h2 {
@@ -429,11 +431,21 @@
             padding-bottom: 12px;
             color: var(--accent-color);
             text-transform: uppercase;
+            font-size: 1.5rem;
         }
 
         .portal-content p, .portal-content ul {
             color: #a1a1aa;
             margin-bottom: 20px;
+            font-size: 1.05rem;
+        }
+
+        .portal-content ul {
+            padding-left: 20px;
+        }
+
+        .portal-content li {
+            margin-bottom: 10px;
         }
 
         .tag-dietary {
@@ -450,6 +462,7 @@
             .menu-item-header { flex-direction: column; align-items: flex-start; gap: 12px; }
             header h1 { font-size: 2.6rem; }
             .scannable-details { grid-template-columns: 1fr; }
+            .portal-content { padding: 25px; }
         }
     </style>
 </head>
@@ -745,10 +758,34 @@
                 <input type="password" id="passcode-field" class="gate-input" placeholder="••••••••">
                 <button class="gate-submit" onclick="verifyCode()">Unlock Brief</button>
             </div>
+            
             <div id="portal" class="portal-content">
-                <center><span class="pairing-tag" style="font-size:1rem; padding: 5px 15px;"><i class="fa-solid fa-unlock"></i> CONFIDENTIAL PARTNER BRIEF</span></center>
-                <h3>1. Executive Summary</h3><p><strong>Crossing Boards</strong> is an upscale, experience-driven casual concept capitalizing on the demand for high-theatric beverage attachment and structural veto-vote mitigation. Shifting final assembly to the table slashes BOH headcount and drastically reduces ticket times.</p>
-                <h3>2. Operations Strategy</h3><p>To combat real-world table crowding, the floor configuration incorporates custom vertical iron board towers. Hot components are insulated inside flush wooden well inserts holding line-heated cast iron or volcanic soapstones, preserving safe handling and ideal temperature mapping.</p>
+                <center><span class="pairing-tag" style="font-size:1rem; padding: 5px 15px;"><i class="fa-solid fa-lock"></i> CONFIDENTIAL PARTNER BRIEF</span></center>
+                
+                <h3>1. Executive Summary</h3>
+                <p><strong>Crossing Boards</strong> is an innovative, experience-driven casual concept capitalizing on the surging market demand for high-theatric beverage attachment and structural veto-vote mitigation. Shifting the final assembly of complex street foods cleanly to the guest's table layout optimizes kitchen prep pipelines, slashes ticket times, maximizes BOH line efficiency, and directly lowers overall labor expenses.</p>
+                
+                <h3>2. Menu Management: The 70/30 Architecture</h3>
+                <p>To completely insulate the culinary supply chain from commodity volatility while keeping consumer engagement and repeat traffic exceptionally high, Crossing Boards maps food and beverage operations to a strict 70/30 architecture format:</p>
+                <ul>
+                    <li><strong>The Anchors (70%):</strong> Permanent global crossing concepts maximizing core item predictability, bulk prep speed, and high profit margins.</li>
+                    <li><strong>The Sails (30%):</strong> Seasonal menu rotations capturing high-volume culinary trends, limited-time neighborhood features, and fast-moving regional explorations every 90 days.</li>
+                </ul>
+
+                <h3>3. Dietary Inclusivity & Veto-Vote Capitalization</h3>
+                <p>Group booking decisions are heavily dictated by individual dietary restrictions. Crossing Boards designs premium, standalone Vegan, Vegetarian, and Gluten-Free (GF) destinations directly into the menu framework rather than handling them as an afterthought. Because food elements are delivered completely deconstructed into isolated, beautiful board wells, cross-contamination risks are mitigated seamlessly at the line level, ensuring maximum group consensus safety.</p>
+
+                <h3>4. High-Margin Beverage Attach Strategies</h3>
+                <p>Beverage programs maintain the strongest profit yields in the hospitality industry. Crossing Boards actively drives average check values up by directly embedding curated, high-theatric craft cocktail pairings and interactive multi-person large format punch kits underneath each core menu item, completely removing friction from the natural table upselling process.</p>
+
+                <h3>5. Operational Hurdles Mitigated</h3>
+                <ul>
+                    <li><strong>Table Space Constraints:</strong> Custom casual footprints will leverage engineered, vertical iron board towers, tiering accoutrement wells upward to preserve table real estate and enhance visual presentation.</li>
+                    <li><strong>Thermal Retention:</strong> Wooden layout frames will hold custom-fitted, insulated wells engineered to house pre-heated volcanic soapstones or cast-iron trenchers straight from the line, keeping main components hot without melting fresh garnishes.</li>
+                </ul>
+                
+                <h3>6. Next Steps & Capital Contact</h3>
+                <p>We are currently establishing introductory alignment phases with strategic equity partners, lead angel investors, and seasoned restaurant advisory groups. For formal pitch deck materials, multi-year pro forma models, or physical board layout walkthroughs, please connect directly with project leadership.</p>
             </div>
         </footer>
     </div>
