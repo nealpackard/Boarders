@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOARDERS | The World, Deconstructed</title>
+    <style>
+        :root {
+            --bg-color: #121212;
+            --surface-color: #1a1a1a;
+            --accent-color: #d4af37; /* Warm Amber/Gold */
+            --text-color: #e0e0e0;
+            --text-muted: #a0a0a0;
+            --border-color: #2a2a2a;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            padding-bottom: 100px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Hero Section */
+        header {
+            text-align: center;
+            padding: 80px 20px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        header h1 {
+            font-size: 3.5rem;
+            letter-spacing: 4px;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            color: var(--accent-color);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* Manifesto */
+        .manifesto {
+            padding: 60px 20px;
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .manifesto h2 {
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .manifesto p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 15px;
+        }
+
+        /* Menu Section */
+        .menu-section {
+            padding: 40px 0;
+        }
+
+        .menu-section h2 {
+            text-align: center;
+            letter-spacing: 2px;
+            margin-bottom: 40px;
+            color: #fff;
+            text-transform: uppercase;
+        }
+
+        .menu-category {
+            margin-bottom: 50px;
+        }
+
+        .category-title {
+            color: var(--accent-color);
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 10px;
+            margin-bottom: 25px;
+            font-size: 1.4rem;
+            letter-spacing: 1px;
+        }
+
+        .menu-item {
+            background: var(--surface-color);
+            border: 1px solid var(--border-color);
+            padding: 25px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .menu-item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .menu-item-title {
+            font-size: 1.3rem;
+            color: #fff;
+            font-weight: 600;
+        }
+
+        .menu-item-price {
+            color: var(--accent-color);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .menu-item-details h4 {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            margin-top: 10px;
+            margin-bottom: 2px;
+        }
+
+        .pairing-box {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px dashed var(--border-color);
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .pairing-tag {
+            background: rgba(212, 175, 55, 0.1);
+            color: var(--accent-color);
+            padding: 2px 8px;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            border-radius: 4px;
+            margin-right: 10px;
+            font-weight: bold;
+            margin-top: 3px;
+            white-space: nowrap;
+        }
+
+        /* Partner Portal Dropdown */
+        .partner-portal {
+            margin-top: 100px;
+            border-top: 1px solid var(--border-color);
+            padding-top: 40px;
+            text-align: center;
+        }
+
+        .portal-btn {
+            background: transparent;
+            border: 1px solid var(--accent-color);
+            color: var(--accent-color);
+            padding: 12px 24px;
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            letter-spacing: 1px;
+        }
+
+        .portal-btn:hover {
+            background: var(--accent-color);
+            color: var(--bg-color);
+        }
+
+        .portal-content {
+            display: none;
+            text-align: left;
+            margin-top: 40px;
+            background: var(--surface-color);
+            padding: 40px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        .portal-content h2, .portal-content h3 {
+            color: #fff;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+
+        .portal-content h2 {
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 10px;
+        }
+
+        .portal-content p, .portal-content ul {
+            color: var(--text-muted);
+            margin-bottom: 15px;
+        }
+
+        .portal-content ul {
+            padding-left: 20px;
+        }
+
+        .portal-content li {
+            margin-bottom: 8px;
+        }
+
+        .tag-dietary {
+            font-size: 0.75rem;
+            background: #2e7d32;
+            color: #fff;
+            padding: 2px 6px;
+            border-radius: 4px;
+            margin-left: 8px;
+            vertical-align: middle;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            header h1 { font-size: 2.5rem; }
+            .menu-item-header { flex-direction: column; align-items: flex-start; }
+            .menu-item-price { margin-top: 5px; }
+            .portal-content { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>BOARDERS</h1>
+        <p>The World, Deconstructed</p>
+    </header>
+
+    <div class="container">
+        
+        <!-- Manifesto -->
+        <section class="manifesto">
+            <h2>Your Table. Your Board. Your Rules.</h2>
+            <p>We are tearing down the boundaries of traditional dining. No rigid plates, no culinary compromises.</p>
+            <p>Boarders brings the world’s greatest regional flavors to your table on sprawling, custom-milled boards. Premium proteins, hot artisanal vessels, and vibrant accompaniments arrive completely deconstructed—leaving final assembly entirely up to you.</p>
+        </section>
+
+        <!-- Menu Section -->
+        <section class="menu-section">
+            <h2>The Passport Menu</h2>
+
+            <!-- Anchor Category -->
+            <div class="menu-category">
+                <div class="category-title">Core Anchor Destinations</div>
+
+                <!-- Item 1 -->
+                <div class="menu-item">
+                    <div class="menu-item-header">
+                        <div class="menu-item-title">The Texas-Mexico Border</div>
+                        <div class="menu-item-price">$28</div>
+                    </div>
+                    <div class="menu-item-details">
+                        <h4>The Mains</h4> <p>Grilled Carne Asada & slow-cooked Pork Carnitas served sizzling hot.</p>
+                        <h4>The Vessels</h4> <p>Warm, stone-pressed corn and flour tortillas.</p>
+                        <h4>The Accoutrements</h4> <p>Cotija cheese, fresh guacamole, pickled red onions, pico de gallo, salsa verde, cilantro, and lime wedges.</p>
+                    </div>
+                    <div class="pairing-box">
+                        <span class="pairing-tag">Recommended Sip</span>
+                        <p><strong>Smoked Mezcal Paloma (+$15):</strong> Mezcal, fresh grapefruit, lime, agave, and a smoked sea salt rim.</p>
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="menu-item">
+                    <div class="menu-item-header">
+                        <div class="menu-item-title">The Mediterranean Coast</div>
+                        <div class="menu-item-price">$26</div>
+                    </div>
+                    <div class="menu-item-details">
+                        <h4>The Mains</h4> <p>Shaved lamb/beef gyro meat & grilled lemon-herb chicken skewers.</p>
+                        <h4>The Vessels</h4> <p>Fluffy, warm, fire-grilled pita triangles.</p>
+                        <h4>The Accoutrements</h4> <p>House-made tzatziki, roasted garlic hummus, crumbled feta, cucumber-tomato-dill salad, and kalamata olives.</p>
+                    </div>
+                    <div class="pairing-box">
+                        <span class="pairing-tag">Recommended Sip</span>
+                        <p><strong>The Aegean Spritz (+$14):</strong> Mastiha botanical liqueur, Prosecco, cucumber-mint water, and lemon.</p>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="menu-item">
+                    <div class="menu-item-header">
+                        <div class="menu-item-title">The Silk Road <span class="tag-dietary">VEGAN</span></div>
+                        <div class="menu-item-price">$24</div>
+                    </div>
+                    <div class="menu-item-details">
+                        <h4>The Mains</h4> <p>Crispy herb-flecked falafel & grilled sumac-spiced eggplant skewers.</p>
+                        <h4>The Vessels</h4> <p>Warm, stone-baked flatbread (Gluten-Free pita available).</p>
+                        <h4>The Accoutrements</h4> <p>Smoky baba ganoush, traditional hummus, pickled turnips, wild arugula, pomegranate seeds, and a rich lemon-tahini drizzle.</p>
+                    </div>
+                    <div class="pairing-box">
+                        <span class="pairing-tag">Recommended Sip</span>
+                        <p><strong>Pomegranate Sumac Fizz (+$14):</strong> Blanco tequila, fresh pomegranate juice, lime, soda, sumac salt rim.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Seasonal Category -->
+            <div class="menu-category">
+                <div class="category-title">Current Seasonal Crossings (Summer)</div>
+
+                <!-- Item 4 -->
+                <div class="menu-item">
+                    <div class="menu-item-header">
+                        <div class="menu-item-title">The French-Vietnamese Cross</div>
+                        <div class="menu-item-price">$27</div>
+                    </div>
+                    <div class="menu-item-details">
+                        <h4>The Mains</h4> <p>Crispy five-spice pork belly & lemongrass-marinated chicken thighs.</p>
+                        <h4>The Vessels</h4> <p>Crusty, warm French baguette halves (sliced open).</p>
+                        <h4>The Accoutrements</h4> <p>Pickled daikon and carrots (đồ chua), fresh jalapeño wheels, cucumber spears, cilantro, and Maggi savory mayo.</p>
+                    </div>
+                    <div class="pairing-box">
+                        <span class="pairing-tag">Recommended Sip</span>
+                        <p><strong>Spiced Lemongrass Highball (+$15):</strong> Lemongrass vodka, ginger liqueur, Thai chili tincture, soda.</p>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Investor Portal Trigger -->
+        <footer class="partner-portal">
+            <button class="portal-btn" onclick="togglePortal()">Access Partner & Investor Portal</button>
+            
+            <div id="portal" class="portal-content">
+                <center><span class="pairing-tag" style="font-size:1rem; padding: 5px 15px;">CONFIDENTIAL PARTNER BRIEF</span></center>
+                
+                <h3>1. Executive Summary</h3>
+                <p><strong>Boarders</strong> is an innovative, upscale-casual restaurant concept capitalizing on the market demand for experiential dining and high-margin craft beverage programs. By shifting final assembly mechanics to the guest, the kitchen layout optimizes line efficiency, slashes ticket times, and lowers required back-of-house labor expenses.</p>
+                
+                <h3>2. Menu Management: The 70/30 Architecture</h3>
+                <p>To insulate the supply chain while keeping consumer engagement high, Boarders maps operations to a 70/30 format:</p>
+                <ul>
+                    <li><strong>The Anchors (70%):</strong> Permanent global concepts maximizing prep predictability and high profit margins.</li>
+                    <li><strong>The Sails (30%):</strong> Seasonal menu rotations capturing high-volume culinary trends every 90 days.</li>
+                </ul>
+
+                <h3>3. Dietary Inclusivity & Veto-Vote Capitalization</h3>
+                <p>Group booking decisions are heavily dictated by dietary restrictions. Boarders designs premium, standalone Vegan, Vegetarian, and Gluten-Free (GF) destinations directly into the menu layout rather than handling them as an afterthought. Because elements are delivered completely deconstructed into isolated board wells, cross-contamination risks are mitigated seamlessly at the line level.</p>
+
+                <h3>4. High-Margin Beverage Attach Strategies</h3>
+                <p>Beverage programs maintain the strongest profit yields in the industry. Boarders drives average check values up by directly embedding curated, high-theatric craft cocktail pairings underneath each food menu item, removing friction from the upsell process.</p>
+
+                <h3>5. Operational Hurdles Mitigated</h3>
+                <ul>
+                    <li><strong>Table Space Constraints:</strong> Custom dining floor footprints will leverage custom-milled vertical board towers, saving essential table real estate.</li>
+                    <li><strong>Thermal Retention:</strong> Wooden layout frames will hold flush, custom-insulated wells engineered to house pre-heated cast-iron inserts straight from the line, keeping main features hot without wilting garnishes.</li>
+                </ul>
+                
+                <h3>6. Next Steps & Capital Contact</h3>
+                <p>We are currently establishing introductory alignment phases with strategic equity partners, lead investors, and restaurant advisory groups. For formal pitch deck materials or physical board prototype walkthroughs, please connect directly with project leadership.</p>
+            </div>
+        </footer>
+
+    </div>
+
+    <script>
+        function togglePortal() {
+            var portal = document.getElementById("portal");
+            if (portal.style.display === "block") {
+                portal.style.display = "none";
+            } else {
+                portal.style.display = "block";
+                portal.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+    </script>
+</body>
+</html>
