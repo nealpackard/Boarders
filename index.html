@@ -128,7 +128,7 @@
             text-align: center;
             max-width: 750px;
             margin: 0 auto;
-            min-height: 260px; /* Prevents layout jump when switching text */
+            min-height: 260px;
         }
 
         .manifesto h2 {
@@ -223,25 +223,21 @@
             border-radius: 12px;
             margin-bottom: 25px;
             box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-            transition: transform 0.2s ease, border-color 0.2s ease;
-        }
-
-        .menu-item:hover {
-            transform: translateY(-2px);
-            border-color: rgba(212, 175, 55, 0.3);
         }
 
         .menu-item-header {
             display: flex;
             justify-content: space-between;
-            align-items: center;
+            align-items: flex-start;
             margin-bottom: 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+            padding-bottom: 15px;
         }
 
         .menu-item-title {
-            font-size: 1.4rem;
+            font-size: 1.5rem;
             color: #fff;
-            font-weight: 600;
+            font-weight: 700;
             display: flex;
             align-items: center;
             gap: 12px;
@@ -253,14 +249,24 @@
             opacity: 0.7;
         }
 
-        .menu-item-price {
-            color: var(--accent-color);
-            font-weight: bold;
-            font-size: 1.3rem;
-            background: rgba(212, 175, 55, 0.05);
-            padding: 4px 12px;
+        /* Fleet Pricing Sizing Layout */
+        .fleet-pricing {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .fleet-tier {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border-color);
+            padding: 6px 12px;
             border-radius: 6px;
-            border: 1px solid rgba(212, 175, 55, 0.1);
+            font-size: 0.85rem;
+            color: #a1a1aa;
+        }
+
+        .fleet-tier strong {
+            color: var(--accent-color);
         }
 
         .menu-item-details h4 {
@@ -312,8 +318,6 @@
             padding: 30px;
             border-radius: 12px;
             margin-top: 60px;
-            position: relative;
-            overflow: hidden;
         }
 
         .upgrades-title {
@@ -355,12 +359,53 @@
             font-size: 1.1rem;
         }
 
-        /* Partner Portal Dashboard Frame */
+        /* Secured Partner Portal System */
         .partner-portal {
             margin-top: 120px;
             border-top: 1px solid var(--border-color);
             padding-top: 60px;
             text-align: center;
+        }
+
+        .gate-container {
+            max-width: 400px;
+            margin: 20px auto 0 auto;
+            display: none;
+            background: var(--surface-color);
+            padding: 25px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        .gate-input {
+            width: 100%;
+            padding: 12px;
+            background: #0f0f11;
+            border: 1px solid var(--border-color);
+            color: #fff;
+            border-radius: 4px;
+            margin-bottom: 15px;
+            text-align: center;
+            font-size: 1rem;
+            letter-spacing: 2px;
+        }
+
+        .gate-input:focus {
+            border-color: var(--accent-color);
+            outline: none;
+        }
+
+        .gate-submit {
+            background: var(--accent-color);
+            color: var(--bg-color);
+            border: none;
+            padding: 10px 20px;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .portal-btn {
@@ -439,13 +484,10 @@
             border: 1px solid rgba(82, 183, 136, 0.2);
         }
 
-        /* Responsive Layout Overrides */
-        @media (max-width: 600px) {
+        @media (max-width: 750px) {
+            .menu-item-header { flex-direction: column; align-items: flex-start; gap: 15px; }
             header h1 { font-size: 2.6rem; }
-            .menu-item-header { flex-direction: column; align-items: flex-start; }
-            .menu-item-price { margin-top: 10px; }
             .portal-content { padding: 25px; }
-            .pairing-box { flex-direction: column; gap: 10px; }
         }
     </style>
 </head>
@@ -502,7 +544,10 @@
                 <div class="menu-item">
                     <div class="menu-item-header">
                         <div class="menu-item-title"><i class="fa-solid fa-cheese"></i> The Passport Charcuterie</div>
-                        <div class="menu-item-price">$32</div>
+                        <div class="fleet-pricing">
+                            <span class="fleet-tier">Solo Traveler: <strong>$18</strong></span>
+                            <span class="fleet-tier">Duo Voyage: <strong>$32</strong></span>
+                        </div>
                     </div>
                     <div class="menu-item-details">
                         <h4>The Goods</h4> <p>Prosciutto di Parma, Spanish chorizo, truffle salami, aged Gouda, triple-cream Brie, and sharp blue cheese.</p>
@@ -523,7 +568,11 @@
                 <div class="menu-item">
                     <div class="menu-item-header">
                         <div class="menu-item-title"><i class="fa-solid fa-pepper-hot"></i> The Texas-Mexico Border</div>
-                        <div class="menu-item-price">$28</div>
+                        <div class="fleet-pricing">
+                            <span class="fleet-tier">Solo Traveler: <strong>$28</strong></span>
+                            <span class="fleet-tier">Duo Voyage: <strong>$54</strong></span>
+                            <span class="fleet-tier">Expedition Pack (4): <strong>$105</strong></span>
+                        </div>
                     </div>
                     <div class="menu-item-details">
                         <h4>The Mains</h4> <p>Grilled Carne Asada & slow-cooked Pork Carnitas served sizzling hot.</p>
@@ -540,7 +589,11 @@
                 <div class="menu-item">
                     <div class="menu-item-header">
                         <div class="menu-item-title"><i class="fa-solid fa-gopuram"></i> The Mediterranean Coast</div>
-                        <div class="menu-item-price">$26</div>
+                        <div class="fleet-pricing">
+                            <span class="fleet-tier">Solo Traveler: <strong>$26</strong></span>
+                            <span class="fleet-tier">Duo Voyage: <strong>$50</strong></span>
+                            <span class="fleet-tier">Expedition Pack (4): <strong>$98</strong></span>
+                        </div>
                     </div>
                     <div class="menu-item-details">
                         <h4>The Mains</h4> <p>Shaved lamb/beef gyro meat & grilled lemon-herb chicken skewers.</p>
@@ -557,7 +610,11 @@
                 <div class="menu-item">
                     <div class="menu-item-header">
                         <div class="menu-item-title"><i class="fa-solid fa-seedling"></i> The Silk Road <span class="tag-dietary">VEGAN</span></div>
-                        <div class="menu-item-price">$24</div>
+                        <div class="fleet-pricing">
+                            <span class="fleet-tier">Solo Traveler: <strong>$24</strong></span>
+                            <span class="fleet-tier">Duo Voyage: <strong>$46</strong></span>
+                            <span class="fleet-tier">Expedition Pack (4): <strong>$88</strong></span>
+                        </div>
                     </div>
                     <div class="menu-item-details">
                         <h4>The Mains</h4> <p>Crispy herb-flecked falafel & grilled sumac-spiced eggplant skewers.</p>
@@ -567,28 +624,6 @@
                     <div class="pairing-box">
                         <span class="pairing-tag"><i class="fa-solid fa-cocktail"></i> Recommended Sip</span>
                         <p><strong>Pomegranate Sumac Fizz (+$14):</strong> Blanco tequila, fresh pomegranate juice, lime, soda, sumac salt rim.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Seasonal Category -->
-            <div class="menu-category">
-                <div class="category-title"><i class="fa-solid fa-cloud-sun"></i> Current Seasonal Crossings (Summer)</div>
-
-                <!-- Item 4 -->
-                <div class="menu-item">
-                    <div class="menu-item-header">
-                        <div class="menu-item-title"><i class="fa-solid fa-passport"></i> The French-Vietnamese Cross</div>
-                        <div class="menu-item-price">$27</div>
-                    </div>
-                    <div class="menu-item-details">
-                        <h4>The Mains</h4> <p>Crispy five-spice pork belly & lemongrass-marinated chicken thighs.</p>
-                        <h4>The Foundations</h4> <p>Crusty, warm French baguette halves (sliced open).</p>
-                        <h4>The Accoutrements</h4> <p>Pickled daikon and carrots (đồ chua), fresh jalapeño wheels, cucumber spears, cilantro, and Maggi savory mayo.</p>
-                    </div>
-                    <div class="pairing-box">
-                        <span class="pairing-tag"><i class="fa-solid fa-cocktail"></i> Recommended Sip</span>
-                        <p><strong>Spiced Lemongrass Highball (+$15):</strong> Lemongrass vodka, ginger liqueur, Thai chili tincture, soda.</p>
                     </div>
                 </div>
             </div>
@@ -616,10 +651,16 @@
 
         <!-- Secure Investment Portal Dropdown Module -->
         <footer class="partner-portal">
-            <button class="portal-btn" onclick="togglePortal()"><i class="fa-solid fa-briefcase"></i> Access Partner & Investor Portal</button>
+            <button class="portal-btn" id="portal-main-btn" onclick="showGate()"><i class="fa-solid fa-lock"></i> Access Partner & Investor Portal</button>
             
+            <div id="gate" class="gate-container">
+                <span class="toggle-label">Enter Access Passcode</span>
+                <input type="password" id="passcode-field" class="gate-input" placeholder="••••••••">
+                <button class="gate-submit" onclick="verifyCode()">Unlock Brief</button>
+            </div>
+
             <div id="portal" class="portal-content">
-                <center><span class="pairing-tag" style="font-size:1rem; padding: 5px 15px;"><i class="fa-solid fa-lock"></i> CONFIDENTIAL PARTNER BRIEF</span></center>
+                <center><span class="pairing-tag" style="font-size:1rem; padding: 5px 15px;"><i class="fa-solid fa-unlock"></i> CONFIDENTIAL PARTNER BRIEF</span></center>
                 
                 <h3>1. Executive Summary</h3>
                 <p><strong>Boarders</strong> is an innovative, upscale-casual restaurant concept capitalizing on the market demand for experiential dining and high-margin craft beverage programs[cite: 1]. By shifting final assembly mechanics to the guest, the kitchen layout optimizes line efficiency, slashes ticket times, and lowers required back-of-house labor expenses[cite: 1].</p>
@@ -654,27 +695,35 @@
     <script>
         // Interactive Toggle Function for Manifesto Options
         function switchManifesto(optionNumber) {
-            // Remove active states from buttons
             document.getElementById('btn-opt1').classList.remove('active');
             document.getElementById('btn-opt2').classList.remove('active');
-            
-            // Remove active states from content blocks
             document.getElementById('manifesto-opt1').classList.remove('active');
             document.getElementById('manifesto-opt2').classList.remove('active');
             
-            // Apply active states to selected path
             document.getElementById('btn-opt' + optionNumber).classList.add('active');
             document.getElementById('manifesto-opt' + optionNumber).classList.add('active');
         }
 
-        // Partner Portal Toggle
-        function togglePortal() {
+        // Security Gate Functions
+        function showGate() {
+            var gate = document.getElementById("gate");
+            var btn = document.getElementById("portal-main-btn");
+            btn.style.display = "none";
+            gate.style.display = "block";
+        }
+
+        function verifyCode() {
+            var input = document.getElementById("passcode-field").value;
             var portal = document.getElementById("portal");
-            if (portal.style.display === "block") {
-                portal.style.display = "none";
-            } else {
+            var gate = document.getElementById("gate");
+            
+            // Secure concept gate password check
+            if (input.toUpperCase() === "PASSPORT2026") {
+                gate.style.display = "none";
                 portal.style.display = "block";
                 portal.scrollIntoView({ behavior: 'smooth' });
+            } else {
+                alert("Invalid Partner Passcode. Access Denied.");
             }
         }
     </script>
