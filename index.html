@@ -45,8 +45,7 @@
         /* Hero Section Styling with Compass Graphic */
         header {
             text-align: center;
-            padding: 100px 20px 60px 20px;
-            border-bottom: 1px solid var(--border-color);
+            padding: 100px 20px 40px 20px;
             position: relative;
         }
 
@@ -78,12 +77,58 @@
             letter-spacing: 4px;
         }
 
+        /* Interactive Manifesto Toggle Controls */
+        .toggle-container {
+            text-align: center;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 30px;
+        }
+
+        .toggle-label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #71717a;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .toggle-switch {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-color);
+            padding: 4px;
+            border-radius: 30px;
+            display: inline-flex;
+            gap: 5px;
+        }
+
+        .toggle-btn {
+            background: transparent;
+            border: none;
+            color: #71717a;
+            padding: 8px 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            letter-spacing: 1px;
+        }
+
+        .toggle-btn.active {
+            background: var(--accent-color);
+            color: var(--bg-color);
+            box-shadow: 0 4px 12px rgba(212, 175, 55, 0.2);
+        }
+
         /* Manifesto Content Framework */
         .manifesto {
-            padding: 80px 20px;
+            padding: 40px 20px 80px 20px;
             text-align: center;
             max-width: 750px;
             margin: 0 auto;
+            min-height: 260px; /* Prevents layout jump when switching text */
         }
 
         .manifesto h2 {
@@ -97,6 +142,20 @@
             font-size: 1.15rem;
             color: #a1a1aa;
             margin-bottom: 20px;
+        }
+
+        .manifesto-option {
+            display: none;
+        }
+
+        .manifesto-option.active {
+            display: block;
+            animation: fadeIn 0.4s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(4px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         /* Menu Section Configuration */
@@ -400,12 +459,33 @@
 
     <div class="container">
         
-        <!-- Manifesto Concept Block (Currently Showing Option 1) -->
+        <!-- Interactive Reviewer Toggle Controls -->
+        <div class="toggle-container">
+            <span class="toggle-label">Reviewer Tool: Select Manifesto Concept</span>
+            <div class="toggle-switch">
+                <button id="btn-opt1" class="toggle-btn active" onclick="switchManifesto(1)">Option 1: Universal Truth</button>
+                <button id="btn-opt2" class="toggle-btn" onclick="switchManifesto(2)">Option 2: Sleek & Punchy</button>
+            </div>
+        </div>
+
+        <!-- Manifesto Concept Block -->
         <section class="manifesto">
-            <h2>Your Table. Your Board. Your Rules.</h2>
-            <p>We are tearing down the boundaries of traditional dining. No rigid plates, no culinary compromises.</p>
-            <p>Look closely at the world’s greatest street foods and you’ll find a universal truth: every culture, from the Mediterranean to the Americas, has perfected the art of crossing borders using a warm flatbread, a stone-pressed tortilla, or a crusty baguette to hold their finest seasoned proteins.</p>
-            <p>Boarders brings these global traditions straight to your table on sprawling, custom-milled boards. Everything arrives completely deconstructed alongside vibrant, regional accoutrements—leaving the final voyage entirely up to you.</p>
+            
+            <!-- Option 1 View -->
+            <div id="manifesto-opt1" class="manifesto-option active">
+                <h2>Your Table. Your Board. Your Rules.</h2>
+                <p>We are tearing down the boundaries of traditional dining. No rigid plates, no culinary compromises.</p>
+                <p>Look closely at the world’s greatest street foods and you’ll find a universal truth: every culture, from the Mediterranean to the Americas, has perfected the art of crossing borders using a warm flatbread, a stone-pressed tortilla, or a crusty baguette to hold their finest seasoned proteins.</p>
+                <p>Boarders brings these global traditions straight to your table on sprawling, custom-milled boards. Everything arrives completely deconstructed alongside vibrant, regional accoutrements—leaving the final voyage entirely up to you.</p>
+            </div>
+
+            <!-- Option 2 View -->
+            <div id="manifesto-opt2" class="manifesto-option">
+                <h2>Crossing Borders. One Bite at a Time.</h2>
+                <p>The greatest culinary traditions don't stay behind lines. Across every border, the world’s most iconic cuisines share a common language: an incredible fire-baked flatbread, a fresh tortilla, or an artisanal loaf layered with rich, seasoned proteins and vibrant toppings.</p>
+                <p>Boarders captures this global phenomenon on a single table. We serve the world’s ultimate comfort foods completely deconstructed on premium wooden boards. With oven-warm breads, hot proteins, and house-made sauces at your fingertips, you orchestrate the journey.</p>
+            </div>
+
         </section>
 
         <!-- Dynamic Menu Grid Structure -->
@@ -572,6 +652,22 @@
 
     <!-- UI/UX Interactive Mechanics Script -->
     <script>
+        // Interactive Toggle Function for Manifesto Options
+        function switchManifesto(optionNumber) {
+            // Remove active states from buttons
+            document.getElementById('btn-opt1').classList.remove('active');
+            document.getElementById('btn-opt2').classList.remove('active');
+            
+            // Remove active states from content blocks
+            document.getElementById('manifesto-opt1').classList.remove('active');
+            document.getElementById('manifesto-opt2').classList.remove('active');
+            
+            // Apply active states to selected path
+            document.getElementById('btn-opt' + optionNumber).classList.add('active');
+            document.getElementById('manifesto-opt' + optionNumber).classList.add('active');
+        }
+
+        // Partner Portal Toggle
         function togglePortal() {
             var portal = document.getElementById("portal");
             if (portal.style.display === "block") {
