@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BOARDERS | The World, Deconstructed</title>
+    <title>CROSSING BOARDS | The World, Deconstructed</title>
     <!-- Vector Graphics Icon Library Integration -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -12,7 +12,7 @@
             --surface-color: #16161a;
             --accent-color: #d4af37; /* Warm Amber/Gold */
             --text-color: #e4e4e7;
-            --text-muted: #9a9a12;
+            --text-muted: #a1a1aa;
             --border-color: #242429;
             --muted-tint: rgba(212, 175, 55, 0.1);
         }
@@ -25,7 +25,6 @@
 
         body {
             background-color: var(--bg-color);
-            /* Theme Graphic: Subtle blueprint/map grid background */
             background-image: 
                 linear-gradient(to right, rgba(212, 175, 55, 0.02) 1px, transparent 1px),
                 linear-gradient(to bottom, rgba(212, 175, 55, 0.02) 1px, transparent 1px);
@@ -42,7 +41,6 @@
             padding: 20px;
         }
 
-        /* Hero Section Styling with Compass Graphic */
         header {
             text-align: center;
             padding: 100px 20px 40px 20px;
@@ -63,21 +61,20 @@
         }
 
         header h1 {
-            font-size: 3.8rem;
+            font-size: 3.5rem;
             letter-spacing: 6px;
             color: #fff;
-            margin-bottom: 10px;
+            margin-bottom: 5px;
             font-weight: 800;
         }
 
         header p {
-            font-size: 1.1rem;
+            font-size: 1rem;
             color: var(--accent-color);
             text-transform: uppercase;
             letter-spacing: 4px;
         }
 
-        /* Interactive Manifesto Toggle Controls */
         .toggle-container {
             text-align: center;
             margin-bottom: 20px;
@@ -122,13 +119,11 @@
             box-shadow: 0 4px 12px rgba(212, 175, 55, 0.2);
         }
 
-        /* Manifesto Content Framework */
         .manifesto {
-            padding: 40px 20px 80px 20px;
+            padding: 40px 20px 60px 20px;
             text-align: center;
             max-width: 750px;
             margin: 0 auto;
-            min-height: 260px;
         }
 
         .manifesto h2 {
@@ -158,9 +153,8 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Menu Section Configuration */
         .menu-section {
-            padding: 40px 0;
+            padding: 20px 0;
         }
 
         .menu-section h2 {
@@ -201,11 +195,6 @@
             gap: 15px;
         }
 
-        .category-title i {
-            font-size: 1.2rem;
-            opacity: 0.9;
-        }
-
         .category-subtitle {
             font-size: 0.9rem;
             color: #71717a;
@@ -213,7 +202,6 @@
             font-weight: normal;
             display: block;
             margin-top: 4px;
-            letter-spacing: 0;
         }
 
         .menu-item {
@@ -235,7 +223,7 @@
         }
 
         .menu-item-title {
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             color: #fff;
             font-weight: 700;
             display: flex;
@@ -249,19 +237,18 @@
             opacity: 0.7;
         }
 
-        /* Fleet Pricing Sizing Layout */
         .fleet-pricing {
             display: flex;
-            gap: 10px;
+            gap: 8px;
             flex-wrap: wrap;
         }
 
         .fleet-tier {
             background: rgba(255, 255, 255, 0.02);
             border: 1px solid var(--border-color);
-            padding: 6px 12px;
+            padding: 4px 10px;
             border-radius: 6px;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             color: #a1a1aa;
         }
 
@@ -269,20 +256,28 @@
             color: var(--accent-color);
         }
 
-        .menu-item-details h4 {
-            color: #71717a;
-            font-size: 0.85rem;
-            text-transform: uppercase;
+        /* Scannable Menu Grid Structure */
+        .scannable-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
             margin-top: 15px;
-            margin-bottom: 4px;
-            letter-spacing: 1px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
         }
 
-        .menu-item-details p {
+        .detail-block h4 {
+            color: #71717a;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 4px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .detail-block p {
             color: #d4d4d8;
+            font-size: 0.95rem;
         }
 
         .pairing-box {
@@ -305,13 +300,9 @@
             margin-top: 2px;
             white-space: nowrap;
             letter-spacing: 1px;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
             border: 1px solid rgba(212, 175, 55, 0.2);
         }
 
-        /* Upgrades Presentation Block */
         .upgrades-box {
             background: var(--surface-color);
             border: 1px solid var(--border-color);
@@ -330,10 +321,6 @@
             display: flex;
             align-items: center;
             gap: 10px;
-        }
-
-        .upgrades-title i {
-            color: var(--accent-color);
         }
 
         .upgrades-list {
@@ -356,10 +343,8 @@
         .upgrade-price {
             color: var(--accent-color);
             font-weight: bold;
-            font-size: 1.1rem;
         }
 
-        /* Secured Partner Portal System */
         .partner-portal {
             margin-top: 120px;
             border-top: 1px solid var(--border-color);
@@ -390,11 +375,6 @@
             letter-spacing: 2px;
         }
 
-        .gate-input:focus {
-            border-color: var(--accent-color);
-            outline: none;
-        }
-
         .gate-submit {
             background: var(--accent-color);
             color: var(--bg-color);
@@ -405,7 +385,6 @@
             cursor: pointer;
             width: 100%;
             text-transform: uppercase;
-            letter-spacing: 1px;
         }
 
         .portal-btn {
@@ -416,7 +395,6 @@
             font-size: 1rem;
             cursor: pointer;
             border-radius: 6px;
-            transition: all 0.3s ease;
             letter-spacing: 2px;
             text-transform: uppercase;
             font-weight: 600;
@@ -428,7 +406,6 @@
         .portal-btn:hover {
             background: var(--accent-color);
             color: var(--bg-color);
-            box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
         }
 
         .portal-content {
@@ -439,36 +416,24 @@
             padding: 50px;
             border-radius: 12px;
             border: 1px solid var(--border-color);
-            box-shadow: 0 10px 40px rgba(0,0,0,0.4);
         }
 
         .portal-content h2, .portal-content h3 {
             color: #fff;
             margin-top: 35px;
             margin-bottom: 15px;
-            letter-spacing: 1px;
         }
 
         .portal-content h2 {
             border-bottom: 1px solid var(--border-color);
             padding-bottom: 12px;
-            text-transform: uppercase;
-            font-size: 1.5rem;
             color: var(--accent-color);
+            text-transform: uppercase;
         }
 
         .portal-content p, .portal-content ul {
             color: #a1a1aa;
             margin-bottom: 20px;
-            font-size: 1.05rem;
-        }
-
-        .portal-content ul {
-            padding-left: 20px;
-        }
-
-        .portal-content li {
-            margin-bottom: 10px;
         }
 
         .tag-dietary {
@@ -478,16 +443,13 @@
             padding: 3px 8px;
             border-radius: 4px;
             margin-left: 10px;
-            vertical-align: middle;
             font-weight: bold;
-            letter-spacing: 1px;
-            border: 1px solid rgba(82, 183, 136, 0.2);
         }
 
         @media (max-width: 750px) {
-            .menu-item-header { flex-direction: column; align-items: flex-start; gap: 15px; }
+            .menu-item-header { flex-direction: column; align-items: flex-start; gap: 12px; }
             header h1 { font-size: 2.6rem; }
-            .portal-content { padding: 25px; }
+            .scannable-details { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -495,388 +457,195 @@
 
     <header>
         <div class="header-icon"><i class="fa-solid fa-compass"></i></div>
-        <h1>BOARDERS</h1>
-        <p>The World, Deconstructed</p>
+        <h1>CROSSING BOARDS</h1>
+        <p>The World, Deconstructed (Concept Lab: Boarders)</p>
     </header>
 
     <div class="container">
         
-        <!-- Interactive Reviewer Toggle Controls -->
+        <!-- Manifesto Concept Switcher -->
         <div class="toggle-container">
-            <span class="toggle-label">Reviewer Tool: Select Manifesto Concept</span>
+            <span class="toggle-label">Concept Testing Matrix</span>
             <div class="toggle-switch">
                 <button id="btn-opt1" class="toggle-btn active" onclick="switchManifesto(1)">Option 1: Universal Truth</button>
                 <button id="btn-opt2" class="toggle-btn" onclick="switchManifesto(2)">Option 2: Sleek & Punchy</button>
             </div>
         </div>
 
-        <!-- Manifesto Concept Block -->
         <section class="manifesto">
-            
-            <!-- Option 1 View -->
             <div id="manifesto-opt1" class="manifesto-option active">
                 <h2>Your Table. Your Board. Your Rules.</h2>
-                <p>We are tearing down the boundaries of traditional dining. No rigid plates, no culinary compromises.</p>
-                <p>Look closely at the world’s greatest street foods and you’ll find a universal truth: every culture, from the Mediterranean to the Americas, has perfected the art of crossing borders using a warm flatbread, a stone-pressed tortilla, or a crusty baguette to hold their finest seasoned fillings.</p>
-                <p>Boarders brings these global traditions straight to your table on sprawling, custom-milled boards. Everything arrives completely deconstructed alongside vibrant, regional accoutrements—leaving the final voyage entirely up to you.</p>
+                <p>We are tearing down the boundaries of traditional dining. No rigid plates, no compromises.</p>
+                <p>Look closely at the world’s greatest street foods and you’ll find a universal truth: every culture has perfected the art of crossing borders using a warm flatbread, a stone-pressed tortilla, or a crusty baguette to hold their finest seasoned fillings.</p>
+                <p>Crossing Boards brings these global traditions straight to your table on sprawling, custom-milled boards. Everything arrives completely deconstructed—leaving the final voyage entirely up to you.</p>
             </div>
 
-            <!-- Option 2 View -->
             <div id="manifesto-opt2" class="manifesto-option">
                 <h2>Crossing Borders. One Bite at a Time.</h2>
                 <p>The greatest culinary traditions don't stay behind lines. Across every border, the world’s most iconic cuisines share a common language: an incredible fire-baked flatbread, a fresh tortilla, or an artisanal loaf layered with rich, savory fillings and vibrant toppings.</p>
-                <p>Boarders captures this global phenomenon on a single table. We serve the world’s ultimate comfort foods completely deconstructed on premium wooden boards. With oven-warm breads, hot mains, and house-made sauces at your fingertips, you orchestrate the journey.</p>
+                <p>We serve the world’s ultimate comfort foods completely deconstructed on premium wooden boards. With oven-warm breads, hot mains, and house-made sauces at your fingertips, you orchestrate the journey.</p>
             </div>
-
         </section>
 
-        <!-- Dynamic Menu Grid Structure -->
+        <!-- Dynamic Menu Grid -->
         <section class="menu-section">
             <h2>The Passport Menu</h2>
 
-            <!-- BEFORE BORDEUX (Starters) -->
+            <!-- STARTERS -->
             <div class="menu-category">
                 <div class="category-title">
                     <i class="fa-solid fa-anchor"></i> Before Bordeux
-                    <span class="category-subtitle">The Port of Entry: Shareable Provisions to Begin the Voyage</span>
+                    <span class="category-subtitle">Shareable Provisions to Begin the Voyage</span>
                 </div>
 
                 <div class="menu-item">
                     <div class="menu-item-header">
                         <div class="menu-item-title"><i class="fa-solid fa-cheese"></i> The Passport Charcuterie</div>
                         <div class="fleet-pricing">
-                            <span class="fleet-tier">Solo Traveler: <strong>$18</strong></span>
+                            <span class="fleet-tier">Solo: <strong>$18</strong></span>
                             <span class="fleet-tier">Duo Voyage: <strong>$32</strong></span>
                         </div>
                     </div>
-                    <div class="menu-item-details">
-                        <h4>The Goods</h4> <p>Prosciutto di Parma, Spanish chorizo, truffle salami, aged Gouda, triple-cream Brie, and sharp blue cheese.</p>
-                        <h4>The Accoutrements</h4> <p>Honeycomb, marcona almonds, grainy Dijon mustard, cornichons, fig jam, and toasted crostini.</p>
+                    <div class="scannable-details">
+                        <div class="detail-block"><h4>The Goods</h4><p>Prosciutto di Parma, Spanish chorizo, truffle salami, aged Gouda, triple-cream Brie, blue cheese.</p></div>
+                        <div class="detail-block"><h4>Accoutrements</h4><p>Honeycomb, marcona almonds, grainy Dijon, cornichons, fig jam, toasted crostini.</p></div>
                     </div>
                     <div class="pairing-box">
-                        <span class="pairing-tag"><i class="fa-solid fa-glass-checked"></i> Passport Pairing</span>
-                        <p><strong>The Barrel-Aged Boulevardier (+$16):</strong> Oak-aged Bourbon, Campari, sweet vermouth.</p>
+                        <span class="pairing-tag">Pairing</span>
+                        <p><strong>The Barrel-Aged Boulevardier (+$16):</strong> Bourbon, Campari, sweet vermouth.</p>
                     </div>
                 </div>
             </div>
 
-            <!-- Anchor Category -->
+            <!-- CORE ANCHORS -->
             <div class="menu-category">
                 <div class="category-title"><i class="fa-solid fa-map-location-dot"></i> Core Anchor Destinations</div>
 
-                <!-- Item 1 -->
+                <!-- Texas Mexico -->
                 <div class="menu-item">
                     <div class="menu-item-header">
                         <div class="menu-item-title"><i class="fa-solid fa-pepper-hot"></i> The Texas-Mexico Border</div>
                         <div class="fleet-pricing">
-                            <span class="fleet-tier">Solo Traveler: <strong>$28</strong></span>
-                            <span class="fleet-tier">Duo Voyage: <strong>$54</strong></span>
-                            <span class="fleet-tier">Expedition Pack (4): <strong>$105</strong></span>
+                            <span class="fleet-tier">Solo: <strong>$28</strong></span>
+                            <span class="fleet-tier">Duo: <strong>$54</strong></span>
+                            <span class="fleet-tier">Expedition (4): <strong>$105</strong></span>
                         </div>
                     </div>
-                    <div class="menu-item-details">
-                        <h4>The Mains</h4> <p>Grilled Carne Asada & slow-cooked Pork Carnitas served sizzling hot.</p>
-                        <h4>The Foundations</h4> <p>Warm, stone-pressed corn and flour tortillas.</p>
-                        <h4>The Accoutrements</h4> <p>Cotija cheese, fresh guacamole, pickled red onions, pico de gallo, salsa verde, cilantro, and lime wedges.</p>
-                    </div>
-                    <div class="pairing-box">
-                        <span class="pairing-tag"><i class="fa-solid fa-cocktail"></i> Recommended Sip</span>
-                        <p><strong>Smoked Mezcal Paloma (+$15):</strong> Mezcal, fresh grapefruit, lime, agave, and a smoked sea salt rim.</p>
+                    <div class="scannable-details">
+                        <div class="detail-block"><h4>The Mains</h4><p>Grilled Carne Asada & slow-cooked Pork Carnitas.</p></div>
+                        <div class="detail-block"><h4>Foundations</h4><p>Warm, stone-pressed corn & flour tortillas.</p></div>
+                        <div class="detail-block"><h4>Accoutrements</h4><p>Cotija, guacamole, pickled onions, pico de gallo, salsa verde, lime.</p></div>
                     </div>
                 </div>
 
-                <!-- Item 2 -->
+                <!-- Mediterranean -->
                 <div class="menu-item">
                     <div class="menu-item-header">
                         <div class="menu-item-title"><i class="fa-solid fa-gopuram"></i> The Mediterranean Coast</div>
                         <div class="fleet-pricing">
-                            <span class="fleet-tier">Solo Traveler: <strong>$26</strong></span>
-                            <span class="fleet-tier">Duo Voyage: <strong>$50</strong></span>
-                            <span class="fleet-tier">Expedition Pack (4): <strong>$98</strong></span>
+                            <span class="fleet-tier">Solo: <strong>$26</strong></span>
+                            <span class="fleet-tier">Duo: <strong>$50</strong></span>
+                            <span class="fleet-tier">Expedition (4): <strong>$98</strong></span>
                         </div>
                     </div>
-                    <div class="menu-item-details">
-                        <h4>The Mains</h4> <p>Shaved lamb/beef gyro meat & grilled lemon-herb chicken skewers.</p>
-                        <h4>The Foundations</h4> <p>Fluffy, warm, fire-grilled pita triangles.</p>
-                        <h4>The Accoutrements</h4> <p>House-made tzatziki, roasted garlic hummus, crumbled feta, cucumber-tomato-dill salad, and kalamata olives.</p>
-                    </div>
-                    <div class="pairing-box">
-                        <span class="pairing-tag"><i class="fa-solid fa-cocktail"></i> Recommended Sip</span>
-                        <p><strong>The Aegean Spritz (+$14):</strong> Mastiha botanical liqueur, Prosecco, cucumber-mint water, and lemon.</p>
-                    </div>
-                </div>
-
-                <!-- Item 3 -->
-                <div class="menu-item">
-                    <div class="menu-item-header">
-                        <div class="menu-item-title"><i class="fa-solid fa-seedling"></i> The Silk Road <span class="tag-dietary">VEGAN</span></div>
-                        <div class="fleet-pricing">
-                            <span class="fleet-tier">Solo Traveler: <strong>$24</strong></span>
-                            <span class="fleet-tier">Duo Voyage: <strong>$46</strong></span>
-                            <span class="fleet-tier">Expedition Pack (4): <strong>$88</strong></span>
-                        </div>
-                    </div>
-                    <div class="menu-item-details">
-                        <h4>The Mains</h4> <p>Crispy herb-flecked falafel & grilled sumac-spiced eggplant skewers.</p>
-                        <h4>The Foundations</h4> <p>Warm, stone-baked flatbread (Gluten-Free pita available).</p>
-                        <h4>The Accoutrements</h4> <p>Smoky baba ganoush, traditional hummus, pickled turnips, wild arugula, pomegranate seeds, and a rich lemon-tahini drizzle.</p>
-                    </div>
-                    <div class="pairing-box">
-                        <span class="pairing-tag"><i class="fa-solid fa-cocktail"></i> Recommended Sip</span>
-                        <p><strong>Pomegranate Sumac Fizz (+$14):</strong> Blanco tequila, fresh pomegranate juice, lime, soda, sumac salt rim.</p>
+                    <div class="scannable-details">
+                        <div class="detail-block"><h4>The Mains</h4><p>Shaved lamb/beef gyro meat & lemon-herb chicken skewers.</p></div>
+                        <div class="detail-block"><h4>Foundations</h4><p>Fluffy, warm, fire-grilled pita triangles.</p></div>
+                        <div class="detail-block"><h4>Accoutrements</h4><p>Tzatziki, garlic hummus, crumbled feta, cucumber-tomato salad.</p></div>
                     </div>
                 </div>
             </div>
 
-            <!-- Seasonal Category -->
+            <!-- FLAGSHIP EXPERIENTIAL CROSSINGS (Formula Breakers) -->
             <div class="menu-category">
-                <div class="category-title"><i class="fa-solid fa-cloud-sun"></i> Current Seasonal Crossings (Summer)</div>
-
-                <!-- Item 4 -->
-                <div class="menu-item">
+                <div class="category-title" style="color: #ef4444;"><i class="fa-solid fa-fire"></i> Flagship Live-Hearth Expeditions</div>
+                
+                <div class="menu-item" style="border-color: rgba(239, 68, 68, 0.2);">
                     <div class="menu-item-header">
-                        <div class="menu-item-title"><i class="fa-solid fa-passport"></i> The French-Vietnamese Cross</div>
+                        <div class="menu-item-title" style="color: #fff;"><i class="fa-solid fa-drumstick-bite"></i> The Argentine Asado Feast</div>
                         <div class="fleet-pricing">
-                            <span class="fleet-tier">Solo Traveler: <strong>$27</strong></span>
-                            <span class="fleet-tier">Duo Voyage: <strong>$52</strong></span>
+                            <span class="fleet-tier">Duo Voyage: <strong>$72</strong></span>
+                            <span class="fleet-tier">Expedition Pack (4): <strong>$138</strong></span>
                         </div>
                     </div>
-                    <div class="menu-item-details">
-                        <h4>The Mains</h4> <p>Crispy five-spice pork belly & lemongrass-marinated chicken thighs.</p>
-                        <h4>The Foundations</h4> <p>Crusty, warm French baguette halves (sliced open).</p>
-                        <h4>The Accoutrements</h4> <p>Pickled daikon and carrots (đồ chua), fresh jalapeño wheels, cucumber spears, cilantro, and Maggi savory mayo.</p>
+                    <div class="scannable-details">
+                        <div class="detail-block"><h4>The Mains (Served Sizzling)</h4><p>Thick-cut Skirt Steak, charred Chorizo sausage, and garlic-marinated Sweetbreads.</p></div>
+                        <div class="detail-block"><h4>The Foundations (Hearth Stones)</h4><p>Sizzling cast-iron trenchers held in custom insulated wooden wells—no bread required.</p></div>
+                        <div class="detail-block"><h4>Accoutrements</h4><p>House chimichurri, fire-roasted bell peppers, salsa criolla, and smoked sea salt blocks.</p></div>
                     </div>
                     <div class="pairing-box">
-                        <span class="pairing-tag"><i class="fa-solid fa-cocktail"></i> Recommended Sip</span>
-                        <p><strong>Spiced Lemongrass Highball (+$15):</strong> Lemongrass vodka, ginger liqueur, Thai chili tincture, soda.</p>
+                        <span class="pairing-tag" style="background: rgba(239,68,68,0.1); color: #ef4444; border-color: rgba(239,68,68,0.2);">Recommended</span>
+                        <p><strong>The Mendoza Smoked Sour (+$16):</strong> High-proof Rye whiskey, fresh lemon, simple syrup, floated with rich Malbec wine under a cherry-smoke dome.</p>
                     </div>
                 </div>
             </div>
 
-            <!-- SHARED BEVERAGES AND BATCH COCKTAILS BLOCK -->
+            <!-- LIQUID ASSETS -->
             <div class="menu-category">
-                <div class="category-title">
-                    <i class="fa-solid fa-wine-glass-empty"></i> Liquid Assets: Shared Libations
-                    <span class="category-subtitle">Large Format & Interactive Table Mixology for the Fleet</span>
-                </div>
+                <div class="category-title"><i class="fa-solid fa-wine-glass-empty"></i> Liquid Assets: Shared Libations</div>
 
-                <!-- Cartographer's Punch -->
                 <div class="menu-item">
                     <div class="menu-item-header">
                         <div class="menu-item-title"><i class="fa-solid fa-whiskey-glass"></i> The Cartographer’s Punch</div>
                         <div class="fleet-pricing">
-                            <span class="fleet-tier">Duo Vessel (2): <strong>$30</strong></span>
+                            <span class="fleet-tier">Duo: <strong>$30</strong></span>
                             <span class="fleet-tier">Expedition Flagon (4): <strong>$58</strong></span>
                         </div>
                     </div>
-                    <div class="menu-item-details">
-                        <h4>The Blend</h4> <p>Premium aged dark rums, citrus oil oleo-saccharum, fresh pineapple juice, hand-squeezed lime juice, and bold black tea infusion.</p>
-                        <h4>The Service</h4> <p>Batched and presented in an elegant vintage dispenser over a hand-carved, botanically frozen ice block, grated with fresh nutmeg at the table.</p>
-                    </div>
-                </div>
-
-                <!-- Smoked Spirit Flight -->
-                <div class="menu-item">
-                    <div class="menu-item-header">
-                        <div class="menu-item-title"><i class="fa-solid fa-smog"></i> The Smoked Spirit Flight</div>
-                        <div class="fleet-pricing">
-                            <span class="fleet-tier">Table Flight (Serves 2-3): <strong>$45</strong></span>
-                        </div>
-                    </div>
-                    <div class="menu-item-details">
-                        <h4>The Goods</h4> <p>A trio of small-batch Bourbon, Reposado Tequila, and Artisanal Mezcal.</p>
-                        <h4>The Interactive Build</h4> <p>Served unmixed on a custom-milled flight board with individual pairing carafes of house-cooked smoked Demerara syrup, blood orange bitters, and honey-ginger nectar. Arrives under an active, applewood smoke-filled glass dome.</p>
-                    </div>
-                </div>
-
-                <!-- Riviera Spritz Kit -->
-                <div class="menu-item">
-                    <div class="menu-item-header">
-                        <div class="menu-item-title"><i class="fa-solid fa-champagne-glasses"></i> The Riviera Spritz Kit</div>
-                        <div class="fleet-pricing">
-                            <span class="fleet-tier">Sovereign Fleet Kit (Serves 4): <strong>$65</strong></span>
-                        </div>
-                    </div>
-                    <div class="menu-item-details">
-                        <h4>The Goods</h4> <p>A crisp, chilled bottle of Italian Prosecco served alongside custom glass vials of botanical infusions (Aperol, Campari, and Mastiha botanical liqueur).</p>
-                        <h4>The Accoutrements</h4> <p>Fresh cucumber ribbons, strawberry wheels, fresh mint bouquets, and an insulated siphon of mineral sparkling water for custom table construction.</p>
+                    <div class="scannable-details">
+                        <div class="detail-block"><h4>The Blend</h4><p>Aged dark rums, citrus oleo-saccharum, pineapple, lime, bold black tea.</p></div>
+                        <div class="detail-block"><h4>The Theatre</h4><p>Presented in an elegant vintage dispenser over a botanically frozen ice block.</p></div>
                     </div>
                 </div>
             </div>
 
-            <!-- UPCOMING EXPEDITIONS CONCEPT HOOK -->
-            <div class="menu-category">
-                <div class="category-title" style="color: #71717a; border-color: rgba(255,255,255,0.05);">
-                    <i class="fa-solid fa-earth-americas"></i> Upcoming Expeditions
-                    <span class="category-subtitle">Concept Development Pipeline: Strategic Rotations Under Exploration</span>
-                </div>
-
-                <!-- India -->
-                <div class="menu-item" style="opacity: 0.65; border-style: dashed;">
-                    <div class="menu-item-header">
-                        <div class="menu-item-title"><i class="fa-solid fa-torah"></i> The Punjab Valley Crossing</div>
-                        <span class="fleet-tier" style="border-style: dashed;">Future Deployment</span>
-                    </div>
-                    <div class="menu-item-details">
-                        <h4>The Mains</h4> <p>Tandoori chicken skewers, slow-simmered butter chicken, and crispy vegetable pakoras.</p>
-                        <h4>The Foundations</h4> <p>Warm, clay-oven garlic naan and layered laccha paratha grains.</p>
-                        <h4>The Accoutrements</h4> <p>Tomato makhani gravy, cooling cucumber raita, mango chutney, pickled red onions, and fresh mint-coriander blend.</p>
-                    </div>
-                    <div class="pairing-box">
-                        <span class="pairing-tag"><i class="fa-solid fa-hourglass-start"></i> Proposed Sip</span>
-                        <p><strong>The Cardamom Mule:</strong> Vodka, house ginger beer, fresh lime, crushed green cardamom reduction.</p>
-                    </div>
-                </div>
-
-                <!-- Eastern Europe -->
-                <div class="menu-item" style="opacity: 0.65; border-style: dashed;">
-                    <div class="menu-item-header">
-                        <div class="menu-item-title"><i class="fa-solid fa-igloo"></i> The Carpathian Hearth</div>
-                        <span class="fleet-tier" style="border-style: dashed;">Future Deployment</span>
-                    </div>
-                    <div class="menu-item-details">
-                        <h4>The Mains</h4> <p>Smoked kielbasa coins, pan-seared potato-cheese pierogies, and tender slow-braised beef brisket.</p>
-                        <h4>The Foundations</h4> <p>Thick slices of artisan dark caraway rye and warm brioche loaves.</p>
-                        <h4>The Accoutrements</h4> <p>Rich sour cream, caramelized onions, hot horseradish mustard, pickled dilled cucumbers, and wild mushroom reduction.</p>
-                    </div>
-                    <div class="pairing-box">
-                        <span class="pairing-tag"><i class="fa-solid fa-hourglass-start"></i> Proposed Sip</span>
-                        <p><strong>The Baltic Horizon:</strong> Rye whiskey, herbal spiced bitters, honey reduction, lemon twist.</p>
-                    </div>
-                </div>
-
-                <!-- Asia -->
-                <div class="menu-item" style="opacity: 0.65; border-style: dashed;">
-                    <div class="menu-item-header">
-                        <div class="menu-item-title"><i class="fa-solid fa-store"></i> The Night Market Grid</div>
-                        <span class="fleet-tier" style="border-style: dashed;">Future Deployment</span>
-                    </div>
-                    <div class="menu-item-details">
-                        <h4>The Mains</h4> <p>Crispy five-spice roasted pork belly and honey-soy grilled chicken thighs.</p>
-                        <h4>The Foundations</h4> <p>Fluffy steamed lotus leaf bao buns and crisp pan-fried scallion pancakes.</p>
-                        <h4>The Accoutrements</h4> <p>Shredded scallions, pickled daikon, fresh cilantro, crushed toasted peanuts, hoisin glaze, and fiery chili crisp.</p>
-                    </div>
-                    <div class="pairing-box">
-                        <span class="pairing-tag"><i class="fa-solid fa-hourglass-start"></i> Proposed Sip</span>
-                        <p><strong>The Ginger Yuzu Highball:</strong> Japanese whiskey, fresh yuzu squeeze, sparkling soda, candied ginger skin.</p>
-                    </div>
-                </div>
-
-                <!-- Africa -->
-                <div class="menu-item" style="opacity: 0.65; border-style: dashed;">
-                    <div class="menu-item-header">
-                        <div class="menu-item-title"><i class="fa-solid fa-sun"></i> The Horn of Africa Feast</div>
-                        <span class="fleet-tier" style="border-style: dashed;">Future Deployment</span>
-                    </div>
-                    <div class="menu-item-details">
-                        <h4>The Mains</h4> <p>Spicy Berbere-stewed beef cubes (Key Wat) and lemon-marinated chicken slow-folds (Doro Wat).</p>
-                        <h4>The Foundations</h4> <p>Spongy, traditional house-fermented sourdough flatbread scrolls (Injera).</p>
-                        <h4>The Accoutrements</h4> <p>Simmered yellow split peas (Kik Alicha), spiced collard greens, tomato-jalapeño salad, and traditional fresh Ayib cheese.</p>
-                    </div>
-                    <div class="pairing-box">
-                        <span class="pairing-tag"><i class="fa-solid fa-hourglass-start"></i> Proposed Sip</span>
-                        <p><strong>The Serengeti Sun:</strong> Aged dark rum, fresh mango nectar, lime squeeze, dash of bird's eye chili infusion.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Custom Dietary Adjustments Upgrades Framework -->
+            <!-- UPGRADES -->
             <div class="upgrades-box">
                 <div class="upgrades-title"><i class="fa-solid fa-sliders"></i> Dietary Reconciliation Upgrades</div>
                 <ul class="upgrades-list">
-                    <li>
-                        <span><strong>Sub Custom Lettuce Wraps</strong> (Swap any bread foundation for crisp butter lettuce leaves)</span>
-                        <span class="upgrade-price">+$0</span>
-                    </li>
-                    <li>
-                        <span><strong>Sub Certified Gluten-Free Pita/Tortillas</strong></span>
-                        <span class="upgrade-price">+$2</span>
-                    </li>
-                    <li>
-                        <span><strong>Extra Board Core Feature</strong></span>
-                        <span class="upgrade-price">+$6</span>
-                    </li>
+                    <li><span><strong>Sub Custom Lettuce Wraps</strong> (Swap bread for butter lettuce leaves)</span><span class="upgrade-price">+$0</span></li>
+                    <li><span><strong>Sub Certified Gluten-Free Pita/Tortillas</strong></span><span class="upgrade-price">+$2</span></li>
+                    <li><span><strong>Extra Board Core Feature</strong></span><span class="upgrade-price">+$6</span></li>
                 </ul>
             </div>
-
         </section>
 
-        <!-- Secure Investment Portal Dropdown Module -->
+        <!-- SECURE PORTAL -->
         <footer class="partner-portal">
             <button class="portal-btn" id="portal-main-btn" onclick="showGate()"><i class="fa-solid fa-lock"></i> Access Partner & Investor Portal</button>
-            
             <div id="gate" class="gate-container">
                 <span class="toggle-label">Enter Access Passcode</span>
                 <input type="password" id="passcode-field" class="gate-input" placeholder="••••••••">
                 <button class="gate-submit" onclick="verifyCode()">Unlock Brief</button>
             </div>
-
             <div id="portal" class="portal-content">
-                <center><span class="pairing-tag" style="font-size:1rem; padding: 5px 15px;"><i class="fa-solid fa-lock"></i> CONFIDENTIAL PARTNER BRIEF</span></center>
-                
-                <h3>1. Executive Summary</h3>
-                <p><strong>Boarders</strong> is an innovative, upscale-casual restaurant concept capitalizing on the market demand for experiential dining and high-margin craft beverage programs. By shifting final assembly mechanics to the guest, the kitchen layout optimizes line efficiency, slashes ticket times, and lowers required back-of-house labor expenses.</p>
-                
-                <h3>2. Menu Management: The 70/30 Architecture</h3>
-                <p>To insulate the supply chain while keeping consumer engagement high, Boarders maps operations to a 70/30 format:</p>
-                <ul>
-                    <li><strong>The Anchors (70%):</strong> Permanent global concepts maximizing prep predictability and high profit margins.</li>
-                    <li><strong>The Sails (30%):</strong> Seasonal menu rotations capturing high-volume culinary trends every 90 days.</li>
-                </ul>
-
-                <h3>3. Dietary Inclusivity & Veto-Vote Capitalization</h3>
-                <p>Group booking decisions are heavily dictated by dietary restrictions. Boarders designs premium, standalone Vegan, Vegetarian, and Gluten-Free (GF) destinations directly into the menu layout rather than handling them as an afterthought. Because elements are delivered completely deconstructed into isolated board wells, cross-contamination risks are mitigated seamlessly at the line level.</p>
-
-                <h3>4. High-Margin Beverage Attach Strategies</h3>
-                <p>Beverage programs maintain the strongest profit yields in the industry. Boarders drives average check values up by directly embedding curated, high-theatric craft cocktail pairings underneath each food menu item, removing friction from the upsell process.</p>
-
-                <h3>5. Operational Hurdles Mitigated</h3>
-                <ul>
-                    <li><strong>Table Space Constraints:</strong> Custom dining floor footprints will leverage custom-milled vertical board towers, saving essential table real estate.</li>
-                    <li><strong>Thermal Retention:</strong> Wooden layout frames will hold flush, custom-insulated wells engineered to house pre-heated cast-iron inserts straight from the line, keeping main features hot without wilting garnishes.</li>
-                </ul>
-                
-                <h3>6. Next Steps & Capital Contact</h3>
-                <p>We are currently establishing introductory alignment phases with strategic equity partners, lead investors, and restaurant advisory groups. For formal pitch deck materials or physical board prototype walkthroughs, please connect directly with project leadership.</p>
+                <center><span class="pairing-tag" style="font-size:1rem; padding: 5px 15px;"><i class="fa-solid fa-unlock"></i> CONFIDENTIAL PARTNER BRIEF</span></center>
+                <h3>1. Executive Summary</h3><p><strong>Crossing Boards</strong> is an upscale, experience-driven casual concept capitalizing on the demand for high-theatric beverage attachment and structural veto-vote mitigation. Shifting final assembly to the table slashes BOH headcount and drastically reduces ticket times.</p>
+                <h3>2. Operations Strategy</h3><p>To combat real-world table crowding, the floor configuration incorporates custom vertical iron board towers. Hot components are insulated inside flush wooden well inserts holding line-heated cast iron or volcanic soapstones, preserving safe handling and ideal temperature mapping.</p>
             </div>
         </footer>
-
     </div>
 
-    <!-- UI/UX Interactive Mechanics Script -->
     <script>
-        // Interactive Toggle Function for Manifesto Options
-        function switchManifesto(optionNumber) {
+        function switchManifesto(num) {
             document.getElementById('btn-opt1').classList.remove('active');
             document.getElementById('btn-opt2').classList.remove('active');
             document.getElementById('manifesto-opt1').classList.remove('active');
             document.getElementById('manifesto-opt2').classList.remove('active');
-            
-            document.getElementById('btn-opt' + optionNumber).classList.add('active');
-            document.getElementById('manifesto-opt' + optionNumber).classList.add('active');
+            document.getElementById('btn-opt' + num).classList.add('active');
+            document.getElementById('manifesto-opt' + num).classList.add('active');
         }
-
-        // Security Gate Functions
         function showGate() {
-            var gate = document.getElementById("gate");
-            var btn = document.getElementById("portal-main-btn");
-            btn.style.display = "none";
-            gate.style.display = "block";
+            document.getElementById("portal-main-btn").style.display = "none";
+            document.getElementById("gate").style.display = "block";
         }
-
         function verifyCode() {
             var input = document.getElementById("passcode-field").value;
-            var portal = document.getElementById("portal");
-            var gate = document.getElementById("gate");
-            
-            // Secure concept gate password check
             if (input.toUpperCase() === "PASSPORT2026") {
-                gate.style.display = "none";
-                portal.style.display = "block";
-                portal.scrollIntoView({ behavior: 'smooth' });
-            } else {
-                alert("Invalid Partner Passcode. Access Denied.");
-            }
+                document.getElementById("gate").style.display = "none";
+                document.getElementById("portal").style.display = "block";
+                document.getElementById("portal").scrollIntoView({ behavior: 'smooth' });
+            } else { alert("Invalid Passcode."); }
         }
     </script>
 </body>
