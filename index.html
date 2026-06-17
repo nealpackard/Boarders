@@ -4,14 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BOARDERS | The World, Deconstructed</title>
+    <!-- Vector Graphics Icon Library Integration -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --bg-color: #121212;
-            --surface-color: #1a1a1a;
+            --bg-color: #0f0f11;
+            --surface-color: #16161a;
             --accent-color: #d4af37; /* Warm Amber/Gold */
-            --text-color: #e0e0e0;
-            --text-muted: #a0a0a0;
-            --border-color: #2a2a2a;
+            --text-color: #e4e4e7;
+            --text-muted: #9a9a12;
+            --border-color: #242429;
+            --muted-tint: rgba(212, 175, 55, 0.1);
         }
 
         * {
@@ -22,6 +25,11 @@
 
         body {
             background-color: var(--bg-color);
+            /* Theme Graphic: Subtle blueprint/map grid background */
+            background-image: 
+                linear-gradient(to right, rgba(212, 175, 55, 0.02) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(212, 175, 55, 0.02) 1px, transparent 1px);
+            background-size: 40px 40px;
             color: var(--text-color);
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             line-height: 1.6;
@@ -34,133 +42,277 @@
             padding: 20px;
         }
 
-        /* Hero Section */
+        /* Hero Section Styling with Compass Graphic */
         header {
             text-align: center;
-            padding: 80px 20px;
+            padding: 100px 20px 60px 20px;
             border-bottom: 1px solid var(--border-color);
+            position: relative;
+        }
+
+        .header-icon {
+            font-size: 2.5rem;
+            color: var(--accent-color);
+            margin-bottom: 20px;
+            opacity: 0.8;
+            animation: rotateCompass 20s linear infinite;
+        }
+
+        @keyframes rotateCompass {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
         }
 
         header h1 {
-            font-size: 3.5rem;
-            letter-spacing: 4px;
+            font-size: 3.8rem;
+            letter-spacing: 6px;
             color: #fff;
             margin-bottom: 10px;
+            font-weight: 800;
         }
 
         header p {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             color: var(--accent-color);
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 4px;
         }
 
-        /* Manifesto */
+        /* Manifesto Content Framework */
         .manifesto {
-            padding: 60px 20px;
+            padding: 80px 20px;
             text-align: center;
             max-width: 700px;
             margin: 0 auto;
         }
 
         .manifesto h2 {
-            margin-bottom: 20px;
+            margin-bottom: 24px;
             color: #fff;
+            font-size: 2rem;
+            letter-spacing: 1px;
         }
 
         .manifesto p {
-            font-size: 1.1rem;
-            color: var(--text-muted);
-            margin-bottom: 15px;
+            font-size: 1.15rem;
+            color: #a1a1aa;
+            margin-bottom: 20px;
         }
 
-        /* Menu Section */
+        /* Menu Section Configuration */
         .menu-section {
             padding: 40px 0;
         }
 
         .menu-section h2 {
             text-align: center;
-            letter-spacing: 2px;
-            margin-bottom: 40px;
+            letter-spacing: 4px;
+            margin-bottom: 60px;
             color: #fff;
             text-transform: uppercase;
+            font-size: 2.2rem;
+            position: relative;
+        }
+
+        .menu-section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 2px;
+            background-color: var(--accent-color);
         }
 
         .menu-category {
-            margin-bottom: 50px;
+            margin-bottom: 60px;
         }
 
         .category-title {
             color: var(--accent-color);
             border-bottom: 1px solid var(--border-color);
-            padding-bottom: 10px;
-            margin-bottom: 25px;
+            padding-bottom: 12px;
+            margin-bottom: 30px;
             font-size: 1.4rem;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .category-title i {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .category-subtitle {
+            font-size: 0.9rem;
+            color: #71717a;
+            text-transform: none;
+            font-weight: normal;
+            display: block;
+            margin-top: 4px;
+            letter-spacing: 0;
         }
 
         .menu-item {
             background: var(--surface-color);
             border: 1px solid var(--border-color);
-            padding: 25px;
-            border-radius: 8px;
-            margin-bottom: 20px;
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+
+        .menu-item:hover {
+            transform: translateY(-2px);
+            border-color: rgba(212, 175, 55, 0.3);
         }
 
         .menu-item-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
         }
 
         .menu-item-title {
-            font-size: 1.3rem;
+            font-size: 1.4rem;
             color: #fff;
             font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .menu-item-title i {
+            font-size: 1.1rem;
+            color: var(--accent-color);
+            opacity: 0.7;
         }
 
         .menu-item-price {
             color: var(--accent-color);
             font-weight: bold;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
+            background: rgba(212, 175, 55, 0.05);
+            padding: 4px 12px;
+            border-radius: 6px;
+            border: 1px solid rgba(212, 175, 55, 0.1);
         }
 
         .menu-item-details h4 {
-            color: var(--text-muted);
-            font-size: 0.9rem;
+            color: #71717a;
+            font-size: 0.85rem;
             text-transform: uppercase;
-            margin-top: 10px;
-            margin-bottom: 2px;
+            margin-top: 15px;
+            margin-bottom: 4px;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .menu-item-details p {
+            color: #d4d4d8;
         }
 
         .pairing-box {
-            margin-top: 15px;
-            padding-top: 15px;
+            margin-top: 25px;
+            padding-top: 20px;
             border-top: 1px dashed var(--border-color);
             display: flex;
             align-items: flex-start;
         }
 
         .pairing-tag {
-            background: rgba(212, 175, 55, 0.1);
+            background: var(--muted-tint);
             color: var(--accent-color);
-            padding: 2px 8px;
+            padding: 4px 10px;
             font-size: 0.75rem;
             text-transform: uppercase;
-            border-radius: 4px;
-            margin-right: 10px;
+            border-radius: 6px;
+            margin-right: 12px;
             font-weight: bold;
-            margin-top: 3px;
+            margin-top: 2px;
             white-space: nowrap;
+            letter-spacing: 1px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            border: 1px solid rgba(212, 175, 55, 0.2);
         }
 
-        /* Partner Portal Dropdown */
+        /* Upgrades Presentation Block */
+        .upgrades-box {
+            background: var(--surface-color);
+            border: 1px solid var(--border-color);
+            padding: 30px;
+            border-radius: 12px;
+            margin-top: 60px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .upgrades-box::before {
+            content: '\f0ad';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            position: absolute;
+            right: 20px;
+            bottom: -10px;
+            font-size: 8rem;
+            color: rgba(255,255,255,0.01);
+            pointer-events: none;
+        }
+
+        .upgrades-title {
+            color: #fff;
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .upgrades-title i {
+            color: var(--accent-color);
+        }
+
+        .upgrades-list {
+            list-style: none;
+        }
+
+        .upgrades-list li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid var(--border-color);
+            color: #a1a1aa;
+        }
+
+        .upgrades-list li:last-child {
+            border-bottom: none;
+        }
+
+        .upgrade-price {
+            color: var(--accent-color);
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        /* Partner Portal Dashboard Frame */
         .partner-portal {
-            margin-top: 100px;
+            margin-top: 120px;
             border-top: 1px solid var(--border-color);
-            padding-top: 40px;
+            padding-top: 60px;
             text-align: center;
         }
 
@@ -168,43 +320,55 @@
             background: transparent;
             border: 1px solid var(--accent-color);
             color: var(--accent-color);
-            padding: 12px 24px;
+            padding: 14px 30px;
             font-size: 1rem;
             cursor: pointer;
-            border-radius: 4px;
+            border-radius: 6px;
             transition: all 0.3s ease;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
         }
 
         .portal-btn:hover {
             background: var(--accent-color);
             color: var(--bg-color);
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
         }
 
         .portal-content {
             display: none;
             text-align: left;
-            margin-top: 40px;
+            margin-top: 50px;
             background: var(--surface-color);
-            padding: 40px;
-            border-radius: 8px;
+            padding: 50px;
+            border-radius: 12px;
             border: 1px solid var(--border-color);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.4);
         }
 
         .portal-content h2, .portal-content h3 {
             color: #fff;
-            margin-top: 30px;
+            margin-top: 35px;
             margin-bottom: 15px;
+            letter-spacing: 1px;
         }
 
         .portal-content h2 {
             border-bottom: 1px solid var(--border-color);
-            padding-bottom: 10px;
+            padding-bottom: 12px;
+            text-transform: uppercase;
+            font-size: 1.5rem;
+            color: var(--accent-color);
         }
 
         .portal-content p, .portal-content ul {
-            color: var(--text-muted);
-            margin-bottom: 15px;
+            color: #a1a1aa;
+            margin-bottom: 20px;
+            font-size: 1.05rem;
         }
 
         .portal-content ul {
@@ -212,56 +376,84 @@
         }
 
         .portal-content li {
-            margin-bottom: 8px;
+            margin-bottom: 10px;
         }
 
         .tag-dietary {
             font-size: 0.75rem;
-            background: #2e7d32;
-            color: #fff;
-            padding: 2px 6px;
+            background: #1b4332;
+            color: #52b788;
+            padding: 3px 8px;
             border-radius: 4px;
-            margin-left: 8px;
+            margin-left: 10px;
             vertical-align: middle;
+            font-weight: bold;
+            letter-spacing: 1px;
+            border: 1px solid rgba(82, 183, 136, 0.2);
         }
 
-        /* Responsive */
+        /* Responsive Layout Overrides */
         @media (max-width: 600px) {
-            header h1 { font-size: 2.5rem; }
+            header h1 { font-size: 2.6rem; }
             .menu-item-header { flex-direction: column; align-items: flex-start; }
-            .menu-item-price { margin-top: 5px; }
-            .portal-content { padding: 20px; }
+            .menu-item-price { margin-top: 10px; }
+            .portal-content { padding: 25px; }
+            .pairing-box { flex-direction: column; gap: 10px; }
         }
     </style>
 </head>
 <body>
 
     <header>
+        <div class="header-icon"><i class="fa-solid fa-compass"></i></div>
         <h1>BOARDERS</h1>
         <p>The World, Deconstructed</p>
     </header>
 
     <div class="container">
         
-        <!-- Manifesto -->
+        <!-- Manifesto Concept Block -->
         <section class="manifesto">
             <h2>Your Table. Your Board. Your Rules.</h2>
             <p>We are tearing down the boundaries of traditional dining. No rigid plates, no culinary compromises.</p>
             <p>Boarders brings the world’s greatest regional flavors to your table on sprawling, custom-milled boards. Premium proteins, hot artisanal vessels, and vibrant accompaniments arrive completely deconstructed—leaving final assembly entirely up to you.</p>
         </section>
 
-        <!-- Menu Section -->
+        <!-- Dynamic Menu Grid Structure -->
         <section class="menu-section">
             <h2>The Passport Menu</h2>
 
+            <!-- BEFORE BORDEUX (Starters) -->
+            <div class="menu-category">
+                <div class="category-title">
+                    <i class="fa-solid fa-anchor"></i> Before Bordeux
+                    <span class="category-subtitle">The Port of Entry: Shareable Provisions to Begin the Voyage</span>
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-item-header">
+                        <div class="menu-item-title"><i class="fa-solid fa-cheese"></i> The Passport Charcuterie</div>
+                        <div class="menu-item-price">$32</div>
+                    </div>
+                    <div class="menu-item-details">
+                        <h4>The Goods</h4> <p>Prosciutto di Parma, Spanish chorizo, truffle salami, aged Gouda, triple-cream Brie, and sharp blue cheese.</p>
+                        <h4>The Accoutrements</h4> <p>Honeycomb, marcona almonds, grainy Dijon mustard, cornichons, fig jam, and toasted crostini.</p>
+                    </div>
+                    <div class="pairing-box">
+                        <span class="pairing-tag"><i class="fa-solid fa-glass-checked"></i> Passport Pairing</span>
+                        <p><strong>The Barrel-Aged Boulevardier (+$16):</strong> Oak-aged Bourbon, Campari, sweet vermouth.</p>
+                    </div>
+                </div>
+            </div>
+
             <!-- Anchor Category -->
             <div class="menu-category">
-                <div class="category-title">Core Anchor Destinations</div>
+                <div class="category-title"><i class="fa-solid fa-map-location-dot"></i> Core Anchor Destinations</div>
 
                 <!-- Item 1 -->
                 <div class="menu-item">
                     <div class="menu-item-header">
-                        <div class="menu-item-title">The Texas-Mexico Border</div>
+                        <div class="menu-item-title"><i class="fa-solid fa-pepper-hot"></i> The Texas-Mexico Border</div>
                         <div class="menu-item-price">$28</div>
                     </div>
                     <div class="menu-item-details">
@@ -270,7 +462,7 @@
                         <h4>The Accoutrements</h4> <p>Cotija cheese, fresh guacamole, pickled red onions, pico de gallo, salsa verde, cilantro, and lime wedges.</p>
                     </div>
                     <div class="pairing-box">
-                        <span class="pairing-tag">Recommended Sip</span>
+                        <span class="pairing-tag"><i class="fa-solid fa-cocktail"></i> Recommended Sip</span>
                         <p><strong>Smoked Mezcal Paloma (+$15):</strong> Mezcal, fresh grapefruit, lime, agave, and a smoked sea salt rim.</p>
                     </div>
                 </div>
@@ -278,7 +470,7 @@
                 <!-- Item 2 -->
                 <div class="menu-item">
                     <div class="menu-item-header">
-                        <div class="menu-item-title">The Mediterranean Coast</div>
+                        <div class="menu-item-title"><i class="fa-solid fa-gopuram"></i> The Mediterranean Coast</div>
                         <div class="menu-item-price">$26</div>
                     </div>
                     <div class="menu-item-details">
@@ -287,7 +479,7 @@
                         <h4>The Accoutrements</h4> <p>House-made tzatziki, roasted garlic hummus, crumbled feta, cucumber-tomato-dill salad, and kalamata olives.</p>
                     </div>
                     <div class="pairing-box">
-                        <span class="pairing-tag">Recommended Sip</span>
+                        <span class="pairing-tag"><i class="fa-solid fa-cocktail"></i> Recommended Sip</span>
                         <p><strong>The Aegean Spritz (+$14):</strong> Mastiha botanical liqueur, Prosecco, cucumber-mint water, and lemon.</p>
                     </div>
                 </div>
@@ -295,7 +487,7 @@
                 <!-- Item 3 -->
                 <div class="menu-item">
                     <div class="menu-item-header">
-                        <div class="menu-item-title">The Silk Road <span class="tag-dietary">VEGAN</span></div>
+                        <div class="menu-item-title"><i class="fa-solid fa-seedling"></i> The Silk Road <span class="tag-dietary">VEGAN</span></div>
                         <div class="menu-item-price">$24</div>
                     </div>
                     <div class="menu-item-details">
@@ -304,7 +496,7 @@
                         <h4>The Accoutrements</h4> <p>Smoky baba ganoush, traditional hummus, pickled turnips, wild arugula, pomegranate seeds, and a rich lemon-tahini drizzle.</p>
                     </div>
                     <div class="pairing-box">
-                        <span class="pairing-tag">Recommended Sip</span>
+                        <span class="pairing-tag"><i class="fa-solid fa-cocktail"></i> Recommended Sip</span>
                         <p><strong>Pomegranate Sumac Fizz (+$14):</strong> Blanco tequila, fresh pomegranate juice, lime, soda, sumac salt rim.</p>
                     </div>
                 </div>
@@ -312,12 +504,12 @@
 
             <!-- Seasonal Category -->
             <div class="menu-category">
-                <div class="category-title">Current Seasonal Crossings (Summer)</div>
+                <div class="category-title"><i class="fa-solid fa-cloud-sun"></i> Current Seasonal Crossings (Summer)</div>
 
                 <!-- Item 4 -->
                 <div class="menu-item">
                     <div class="menu-item-header">
-                        <div class="menu-item-title">The French-Vietnamese Cross</div>
+                        <div class="menu-item-title"><i class="fa-solid fa-passport"></i> The French-Vietnamese Cross</div>
                         <div class="menu-item-price">$27</div>
                     </div>
                     <div class="menu-item-details">
@@ -326,50 +518,70 @@
                         <h4>The Accoutrements</h4> <p>Pickled daikon and carrots (đồ chua), fresh jalapeño wheels, cucumber spears, cilantro, and Maggi savory mayo.</p>
                     </div>
                     <div class="pairing-box">
-                        <span class="pairing-tag">Recommended Sip</span>
+                        <span class="pairing-tag"><i class="fa-solid fa-cocktail"></i> Recommended Sip</span>
                         <p><strong>Spiced Lemongrass Highball (+$15):</strong> Lemongrass vodka, ginger liqueur, Thai chili tincture, soda.</p>
                     </div>
                 </div>
             </div>
 
+            <!-- Custom Dietary Adjustments Upgrades Framework -->
+            <div class="upgrades-box">
+                <div class="upgrades-title"><i class="fa-solid fa-sliders"></i> Dietary Reconciliation Upgrades</div>
+                <ul class="upgrades-list">
+                    <li>
+                        <span><strong>Sub Custom Lettuce Wraps</strong> (Swap any bread vessel for crisp butter lettuce leaves)</span>
+                        <span class="upgrade-price">+$0</span>
+                    </li>
+                    <li>
+                        <span><strong>Sub Certified Gluten-Free Pita/Tortillas</strong></span>
+                        <span class="upgrade-price">+$2</span>
+                    </li>
+                    <li>
+                        <span><strong>Extra Board Protein Feature</strong></span>
+                        <span class="upgrade-price">+$6</span>
+                    </li>
+                </ul>
+            </div>
+
         </section>
 
-        <!-- Investor Portal Trigger -->
+        <!-- Secure Investment Portal Dropdown Module -->
         <footer class="partner-portal">
-            <button class="portal-btn" onclick="togglePortal()">Access Partner & Investor Portal</button>
+            <button class="portal-btn" onclick="togglePortal()"><i class="fa-solid fa-briefcase"></i> Access Partner & Investor Portal</button>
             
             <div id="portal" class="portal-content">
-                <center><span class="pairing-tag" style="font-size:1rem; padding: 5px 15px;">CONFIDENTIAL PARTNER BRIEF</span></center>
+                <center><span class="pairing-tag" style="font-size:1rem; padding: 5px 15px;"><i class="fa-solid fa-lock"></i> CONFIDENTIAL PARTNER BRIEF</span></center>
                 
                 <h3>1. Executive Summary</h3>
-                <p><strong>Boarders</strong> is an innovative, upscale-casual restaurant concept capitalizing on the market demand for experiential dining and high-margin craft beverage programs. By shifting final assembly mechanics to the guest, the kitchen layout optimizes line efficiency, slashes ticket times, and lowers required back-of-house labor expenses.</p>
+                <p><strong>Boarders</strong> is an innovative, upscale-casual restaurant concept capitalizing on the market demand for experiential dining and high-margin craft beverage programs[cite: 1]. By shifting final assembly mechanics to the guest, the kitchen layout optimizes line efficiency, slashes ticket times, and lowers required back-of-house labor expenses[cite: 1].</p>
                 
                 <h3>2. Menu Management: The 70/30 Architecture</h3>
-                <p>To insulate the supply chain while keeping consumer engagement high, Boarders maps operations to a 70/30 format:</p>
+                <p>To insulate the supply chain while keeping consumer engagement high, Boarders maps operations to a 70/30 format[cite: 1]:</p>
                 <ul>
-                    <li><strong>The Anchors (70%):</strong> Permanent global concepts maximizing prep predictability and high profit margins.</li>
-                    <li><strong>The Sails (30%):</strong> Seasonal menu rotations capturing high-volume culinary trends every 90 days.</li>
+                    <li><strong>The Anchors (70%):</strong> Permanent global concepts maximizing prep predictability and high profit margins[cite: 1].</li>
+                    <li><strong>The Sails (30%):</strong> Seasonal menu rotations capturing high-volume culinary trends every 90 days[cite: 1].</li>
                 </ul>
 
                 <h3>3. Dietary Inclusivity & Veto-Vote Capitalization</h3>
                 <p>Group booking decisions are heavily dictated by dietary restrictions. Boarders designs premium, standalone Vegan, Vegetarian, and Gluten-Free (GF) destinations directly into the menu layout rather than handling them as an afterthought. Because elements are delivered completely deconstructed into isolated board wells, cross-contamination risks are mitigated seamlessly at the line level.</p>
 
                 <h3>4. High-Margin Beverage Attach Strategies</h3>
-                <p>Beverage programs maintain the strongest profit yields in the industry. Boarders drives average check values up by directly embedding curated, high-theatric craft cocktail pairings underneath each food menu item, removing friction from the upsell process.</p>
+                <p>Beverage programs maintain the strongest profit yields in the industry. Boarders drives average check values up by directly embedding curated, high-theatric craft cocktail pairings underneath each food menu item, removing friction from the upsell process[cite: 1].</p>
 
                 <h3>5. Operational Hurdles Mitigated</h3>
                 <ul>
-                    <li><strong>Table Space Constraints:</strong> Custom dining floor footprints will leverage custom-milled vertical board towers, saving essential table real estate.</li>
-                    <li><strong>Thermal Retention:</strong> Wooden layout frames will hold flush, custom-insulated wells engineered to house pre-heated cast-iron inserts straight from the line, keeping main features hot without wilting garnishes.</li>
+                    <li><strong>Table Space Constraints:</strong> Custom dining floor footprints will leverage custom-milled vertical board towers, saving essential table real estate[cite: 1].</li>
+                    <li><strong>Thermal Retention:</strong> Wooden layout frames will hold flush, custom-insulated wells engineered to house pre-heated cast-iron inserts straight from the line, keeping main features hot without wilting garnishes[cite: 1].</li>
                 </ul>
                 
                 <h3>6. Next Steps & Capital Contact</h3>
-                <p>We are currently establishing introductory alignment phases with strategic equity partners, lead investors, and restaurant advisory groups. For formal pitch deck materials or physical board prototype walkthroughs, please connect directly with project leadership.</p>
+                <p>We are currently establishing introductory alignment phases with strategic equity partners, lead investors, and restaurant advisory groups[cite: 1]. For formal pitch deck materials or physical board prototype walkthroughs, please connect directly with project leadership[cite: 1].</p>
             </div>
         </footer>
 
     </div>
 
+    <!-- UI/UX Interactive Mechanics Script -->
     <script>
         function togglePortal() {
             var portal = document.getElementById("portal");
