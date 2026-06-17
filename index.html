@@ -800,16 +800,24 @@
             document.getElementById('manifesto-opt' + num).classList.add('active');
         }
         function showGate() {
+            /*
             document.getElementById("portal-main-btn").style.display = "none";
             document.getElementById("gate").style.display = "block";
+            */
+            // Instantly bypasses the input field and displays the content directly
+            document.getElementById("portal-main-btn").style.display = "none";
+            document.getElementById("portal").style.display = "block";
+            document.getElementById("portal").scrollIntoView({ behavior: 'smooth' });
         }
         function verifyCode() {
+            /*
             var input = document.getElementById("passcode-field").value;
             if (input.toUpperCase() === "PASSPORT2026") {
                 document.getElementById("gate").style.display = "none";
                 document.getElementById("portal").style.display = "block";
                 document.getElementById("portal").scrollIntoView({ behavior: 'smooth' });
             } else { alert("Invalid Passcode."); }
+            */
         }
     </script>
 </body>
